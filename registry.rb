@@ -6,6 +6,6 @@ control 'windows-base-101' do
   '
   describe registry_key('HKLM\\System\\CurrentControlSet\\Control\\Session Manager') do
   
-    it { should_not have_property_value('SafeDllSearchMode', :type_dword, '0') }
+    its('SafeDllSearchMode') { should eq 0 }
   end
 end
