@@ -8,7 +8,7 @@ control 'windows-base-ping' do
   script = <<-EOH
     # ping
     $ping = new-object system.net.networkinformation.ping
-    $ping.send("www.baidu.com",3)
+    $ping.send("www.baidu.1com",3)
   EOH
 
   describe powershell(script) do
