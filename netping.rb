@@ -7,11 +7,12 @@ control 'windows-base-ping' do
   
   script = <<-EOH
     # ping
-    Test-NetConnection www.baidu.com
+    $ping = new-object system.net.networkinformation.ping
+    $ping.send("www.baidu.com",3)
   EOH
 
   describe powershell(script) do
-    its('stdout') { should eq '/True/' }
+    its('stdout') { should eq '/Success/' }
   end
 
 end
