@@ -11,7 +11,7 @@ control 'windows-base-ping' do
   EOH
 
   describe powershell(script) do
-    its('stdout') { should_not eq '/True/' }
+    its('stdout') { should eq '/True/' }
   end
 
 end
