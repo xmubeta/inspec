@@ -12,7 +12,7 @@ control 'windows-base-ping' do
   EOH
 
   describe powershell(script) do
-    its('stdout') { should eq '/Success/' }
+    its('stdout') { should match /Success/ }
   end
 
 end
