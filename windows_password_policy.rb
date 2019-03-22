@@ -7,8 +7,8 @@ control 'windows-base-password-policy' do
   
   script = <<-EOH
     # get password complexity
-    secedit /export /cfg C:\C:\Windows\Temp\securityconfig.cfg
-    Get-Content C:\C:\Windows\Temp\securityconfig.cfg  | Select-String -Pattern "PasswordComplexity"
+    secedit /export /cfg C:\Windows\Temp\securityconfig.cfg
+    Get-Content C:\Windows\Temp\securityconfig.cfg  | Select-String -Pattern "PasswordComplexity"
   EOH
 
   describe powershell(script) do
